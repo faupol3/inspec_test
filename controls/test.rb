@@ -1,5 +1,15 @@
 title "My Test Controls"
 
+control "accela-drive" do
+  impact 1
+  title "Accela Drive"
+  desc "Ensure that the Accela drive exists and is properly formatted."
+  describe filesystem('G:') do
+    it { should exist }
+    its('type') { should cmp 'NTFS' }
+  end
+end
+
 control "artifact-exists" do
   impact 1
   title "Artifact exists"
