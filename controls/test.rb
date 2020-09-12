@@ -5,7 +5,6 @@ control "accela-drive" do
   title "Accela Drive"
   desc "Ensure that the Accela drive exists and is properly formatted."
   describe filesystem('G:') do
-    it { should exist }
     its('type') { should cmp 'NTFS' }
   end
 end
